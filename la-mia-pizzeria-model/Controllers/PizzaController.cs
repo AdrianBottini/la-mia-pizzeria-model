@@ -41,7 +41,7 @@ namespace la_mia_pizzeria_static.Controllers
         }
         public IActionResult Details(long id)
         {
-            using var ctx = new Models.PizzeriaContext();
+            using Models.PizzeriaContext ctx = new Models.PizzeriaContext();
             var pizza = ctx.Pizzas.SingleOrDefault(p => p.Id == id);
 
             if (pizza is null)
